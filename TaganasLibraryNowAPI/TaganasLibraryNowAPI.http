@@ -1,0 +1,6 @@
+@TaganasLibraryNowAPI_HostAddress = http://localhost:5277
+
+GET {{TaganasLibraryNowAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

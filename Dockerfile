@@ -6,10 +6,10 @@ ENV ASPNETCORE_URLS=http://+:8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS base
 WORKDIR /src
 COPY . .
-RUN dotnet restore
-RUN dotnet publish -c Release -o /app/out
+RUN dotnet restore "TaganasLibraryNowAPI.csproj"
+RUN dotnet publish "TaganasLibraryNowAPI.csproj" -c Release -o /app/out
 
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/out
-ENTRYPOINT ["dotnet", "TaganasLibraryNowAPI.dll"]S
+ENTRYPOINT ["dotnet", "TaganasLibraryNowAPI.dll"]

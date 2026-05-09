@@ -13,13 +13,10 @@ var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 app.Urls.Add($"Http://+:{port}");
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 
-app.UseHttpsRedirection();
 app.MapControllers();
 
 app.Run();
